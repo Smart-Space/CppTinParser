@@ -40,10 +40,6 @@ int main(int argc, char* argv[]){
     // tag inlcude html -> html generate
     // adding =====
     // map inlcude o/out/output -> output dir
-    //x tag include tinp -> TINP file generate
-    //x  also need map key value
-    //x tag include untinp -> TINP file to TIN file generate
-    //x  also need map key value
     Cmd_Argv* argv_ = readargv(argv);
 
     //输出当前文件名
@@ -70,30 +66,6 @@ int main(int argc, char* argv[]){
 
     // string content = readFile(argv[1]);
     string content = readFile(argv_->argv_list[0]);
-
-    // if (argv_->checktag("tinp")){
-    //     //要求生成TINP格式文件
-    //     cout << "MODE: TINP GENERATION MODE" << endl;
-    //     cout << "KEY: " << argv_->getkey("key") << endl;
-    //     string resstring = "";
-    //     if (argv_->getkey("key") != ""){
-    //         //TAG中含tinp时，需要有-key值
-    //         resstring = xorstring(content, argv_->getkey("key"));
-    //     }
-    //     cout << resstring << endl;
-    //     return 0;
-    // }else if (argv_->checktag("untinp")){
-    //     //解码TINP格式文件
-    //     cout << "MODE: TINP DECODE MODE" << endl;
-    //     cout << "KEY: " << argv_->getkey("key") << endl;
-    //     string resstring = "";
-    //     if (argv_->getkey("key") != ""){
-    //         //TAG中含untinp时，需要有-key值
-    //         resstring = xorstring(content, argv_->getkey("key"));
-    //     }
-    //     cout << resstring << endl;
-    //     return 0;
-    // }
 
     TinLexer lexer(content);
     auto lexresult = lexer.lex();
